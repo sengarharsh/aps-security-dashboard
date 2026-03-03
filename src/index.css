@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@theme {
+  --color-primary-teal: #0cc8a8;
+  --color-bg-dark: #12141D;
+  --color-bg-light: #F9FAFB;
+  --color-card-dark: #1C1F2B;
+  --color-card-light: #FFFFFF;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #F8FAFC;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-color: #E2E8F0;
+  }
+
+  .dark {
+    --bg-primary: #0F0F0F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --border-color: #262626;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Apply the premium radial gradient globally if in dark mode */
+  .dark body {
+    background: #0F0F0F radial-gradient(circle at center, #1A1A1A 0%, #0F0F0F 100%);
+    background-attachment: fixed;
+  }
+}

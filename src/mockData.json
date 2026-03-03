@@ -1,0 +1,111 @@
+{
+    "stats": {
+        "critical": 12,
+        "high": 34,
+        "medium": 89,
+        "low": 150
+    },
+    "projects": [
+        {
+            "id": "p1",
+            "name": "Main Platform Web App"
+        },
+        {
+            "id": "p2",
+            "name": "Customer Facing API"
+        },
+        {
+            "id": "p3",
+            "name": "Internal Admin Dashboard"
+        }
+    ],
+    "scans": [
+        {
+            "id": "scan_1",
+            "name": "Production Edge Discovery",
+            "type": "Full DAST",
+            "status": "In Progress",
+            "progress": 65,
+            "vulnerabilities": {
+                "critical": 2,
+                "high": 5,
+                "medium": 12,
+                "low": 24
+            }
+        },
+        {
+            "id": "scan_2",
+            "name": "Internal API Pentest",
+            "type": "API Specific",
+            "status": "Completed",
+            "progress": 100,
+            "vulnerabilities": {
+                "critical": 0,
+                "high": 1,
+                "medium": 4,
+                "low": 8
+            }
+        },
+        {
+            "id": "scan_3",
+            "name": "OAuth Flow Audit",
+            "type": "Compliance",
+            "status": "Failed",
+            "progress": 42,
+            "vulnerabilities": {
+                "critical": 5,
+                "high": 9,
+                "medium": 0,
+                "low": 2
+            }
+        },
+        {
+            "id": "scan_4",
+            "name": "Cloud Infrastructure Scan",
+            "type": "Full DAST",
+            "status": "Scheduled",
+            "progress": 0,
+            "vulnerabilities": {
+                "critical": 0,
+                "high": 0,
+                "medium": 0,
+                "low": 0
+            }
+        }
+    ],
+    "findings": [
+        {
+            "id": "f_1",
+            "severity": "Critical",
+            "type": "SQL Injection (Boolean-Based)",
+            "path": "/api/v1/users/authenticate"
+        },
+        {
+            "id": "f_2",
+            "severity": "High",
+            "type": "Reflected Cross-Site Scripting",
+            "path": "/search?query=<script>"
+        },
+        {
+            "id": "f_3",
+            "severity": "Medium",
+            "type": "Insecure Direct Object Reference (IDOR)",
+            "path": "/api/v1/invoices/download"
+        },
+        {
+            "id": "f_4",
+            "severity": "Low",
+            "type": "Missing Content-Security-Policy",
+            "path": "Global Headers"
+        }
+    ],
+    "liveLogs": [
+        "[10:45:01 INFO] Initializing crawler for target...",
+        "[10:45:03 INFO] Discovered 124 internal links.",
+        "[10:45:15 WARN] Encountered 403 Forbidden on /admin path.",
+        "[10:46:22 INFO] Scanning /api/v1/auth...",
+        "[10:47:05 ALERT] CVE-2024-XXXX detection confirmed: Response payload bypassed authentication logic.",
+        "[10:47:10 ALERT] Confirmed SQL injection vulnerability on /api/v1/search (param: q)",
+        "[10:48:30 INFO] Proceeding with DOM XSS checks on frontend routes..."
+    ]
+}
